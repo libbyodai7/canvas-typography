@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Playfair+Display" rel="stylesheet">
+
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        var background = new Image();
+        var flower = new Image();
+        background.addEventListener('load', function(){
+
+          flower.addEventListener('load', function(){
+          
+           ctx.drawImage(background, 0, 0);
+            ctx.drawImage(flower, 200, 0, 700, 500);
+          
+          
+            ctx.font="30px Cabin";
+            ctx.fillText("Autumn Narcissus", 100, 300);
+
+
+           ctx.font="italic 20px Playfair";
+           ctx.fillText("Narcissus serotinus", 150, 330);
+
+            ctx.font="15px Playfair";
+            ctx.fillText("Autumn flowering bulb with one or two narrow", 200, 370);
+
+             ctx.font="15px Playfair";
+            ctx.fillText("thread-like, blue-green leaves appearing in the following spring.", 200, 400);
+
+
+            ctx.font="15px Playfair";
+            ctx.fillText("Fragrant flowers are solitary at one or two at the stem tip.", 200, 430);
+
+       // ctx.fillStyle = 'rgb(200, 0, 0)';
+        //ctx.fillRect(10, 10, 50, 50);
+
+       // ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+       // ctx.fillRect(30, 30, 50, 50);
+
+
+       }, false);
+        }, false);
+
+        background.src = 'images/background.jpg';
+        flower.src = 'images/flower.png';
+
+       
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="800" height="600"></canvas>
+ </body>
+</html>
