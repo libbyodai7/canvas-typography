@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Text fade in – fade out Animation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Playfair+Display|Damion" rel="stylesheet">
+    <style>
+        canvas{border: 1px solid #bbb;}
+        .subdiv{width: 320px;}
+        .text{margin: auto; width: 290px;}
+    </style>
+ 
+    <script type="text/javascript">
+        var can, ctx, step = 50, steps = 255;
+              delay = 20;
+              var rgbstep = 50;
+ 
+        function init() {
+            can = document.getElementById("MyCanvas1");
+            ctx= can.getContext("2d");
+            ctx.fillStyle = "blue";
+            ctx.font = "40pt Helvetica";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+                     Textfadeup();        }
+ 
+          function Textfadeup() {
+            rgbstep++;
+            ctx.clearRect(0, 0, can.width, can.height);
+            ctx.fillStyle = "rgb(" + rgbstep + "," + rgbstep + "," + rgbstep + ")"
+           
+   ctx.font="30px Damion";
+            ctx.fillText("Autumn Narcissus", 100, 300);
+
+
+           ctx.font="italic 20px Playfair";
+           ctx.fillText("Narcissus serotinus", 150, 330);
+
+            ctx.font="15px Playfair";
+            ctx.fillText("Autumn flowering bulb with one or two narrow", 200, 370);
+
+             ctx.font="15px Playfair";
+            ctx.fillText("thread-like, blue-green leaves appearing in the following spring.", 200, 400);
+
+            ctx.font="15px Playfair";
+            ctx.fillText("Fragrant flowers are solitary at one or two at the stem tip.", 200, 430);
+
+
+            if (rgbstep < 255)
+                var t = setTimeout('Textfadeup()', 10);
+            if (rgbstep == 255) {
+                Textfadedown();
+            }
+        }
+        function Textfadedown() {
+rgbstep=rgbstep-1;
+            ctx.clearRect(0, 0, can.width, can.height);
+            ctx.fillStyle = "rgb(" + rgbstep + "," + rgbstep + "," + rgbstep + ")"
+          
+   ctx.font="30px Damion";
+            ctx.fillText("Autumn Narcissus", 100, 300);
+
+
+           ctx.font="italic 20px Playfair";
+           ctx.fillText("Narcissus serotinus", 150, 330);
+
+            ctx.font="15px Playfair";
+            ctx.fillText("Autumn flowering bulb with one or two narrow", 200, 370);
+
+             ctx.font="15px Playfair";
+            ctx.fillText("thread-like, blue-green leaves appearing in the following spring.", 200, 400);
+
+            ctx.font="15px Playfair";
+            ctx.fillText("Fragrant flowers are solitary at one or two at the stem tip.", 200, 430);
+
+            if (rgbstep > 80)
+                var t = setTimeout('Textfadedown()', 10);
+            if (rgbstep == 80) {
+                Textfadeup();
+            }
+        }  
+    </script>
+ 
+</head>
+<body onload="init();">
+    <div class="subdiv">
+        <canvas id="MyCanvas1" width="800" height="600">
+  This browser or document mode doesn't support canvas object</canvas>
+          </div>
+</body>
+</html>
