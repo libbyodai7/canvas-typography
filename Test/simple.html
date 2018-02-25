@@ -3,7 +3,7 @@
  <head>
   <meta charset="utf-8"/>
 
-<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Playfair+Display|Damion" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Playfair+Display|Damion|Abril+Fatface|Nanum+Myeongjo|EB+Garamond" rel="stylesheet">
 
   <script type="application/javascript">
     function draw() {
@@ -25,20 +25,20 @@
 
           
            ctx.drawImage(background, 0, 0);
-            ctx.drawImage(flower, 200, 0, 700, 500);
+            ctx.drawImage(flower, 300, 50, 500, 350);
 
 
            ctx.font="italic 30px Playfair";
-           ctx.fillText("Narcissus serotinus", 150, 330);
+           ctx.fillText("Narcissus serotinus", 70, 330);
 
-            ctx.font="15px Playfair";
+            ctx.font="20px EB Garamond";
             ctx.fillText("Autumn flowering bulb with one or two narrow", 200, 370);
 
-             ctx.font="15px Playfair";
+             ctx.font="20px EB Garamond";
             ctx.fillText("thread-like, blue-green leaves appearing in the following spring.", 200, 400);
 
 
-            ctx.font="15px Playfair";
+            ctx.font="20px EB Garamond";
             ctx.fillText("Fragrant flowers are solitary at one or two at the stem tip.", 200, 430);
 
           
@@ -67,7 +67,7 @@
 
           dashOffset = dashLength;
 
-            speed = 7;
+            speed = 20;
 
             txt = "Autumn Narcissus";
 
@@ -78,8 +78,8 @@
             ctx.font="50px Damion";
             ctx.lineWidth = 1;
             ctx.lineJoin = "round";
-             ctx.globalAlpha = 2/3;
-            ctx.strokeStyle = ctx.fillStyle = "#000";
+             ctx.globalAlpha = 5/6;
+            ctx.strokeStyle = ctx.fillStyle = "#424241";
 
 
             (function loop() {
@@ -87,7 +87,7 @@
   //ctx.drawImage(background, 0, 0);
   ctx.setLineDash([dashLength - dashOffset, dashOffset - speed]); // create a long dash mask
   dashOffset -= speed;                                         // reduce dash length
-  //ctx.strokeText(txt[i], x, 90);                               // stroke letter
+  ctx.strokeText(txt[i], x, 300);                               // stroke letter
 
   if (dashOffset > 0) requestAnimationFrame(loop);             // animate
   else {
@@ -109,7 +109,25 @@
     }
   </script>
  </head>
+ <style>
+body {
+  background-color: #FFF5E9;
+}
+
+
+ #canvas-container {
+  text-align: center;
+
+ }
+
+ canvas {
+  display: inline;
+ }
+
+ </style>
  <body onload="draw();">
+  <div id="canvas-container">
    <canvas id="canvas" width="800" height="600"></canvas>
+ </div>
  </body>
 </html>
